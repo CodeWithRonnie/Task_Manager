@@ -217,8 +217,8 @@ body {
 
 .task-actions {
   display: flex;
-  gap: 4px;
-  margin-top: 8px;
+  justify-content: center;
+  margin-top: 12px;
 }
 
 .btn {
@@ -238,6 +238,13 @@ body {
 
 .btn-delete:hover {
   background-color: #B8941F;
+}
+
+.btn-delete-large {
+  font-size: 14px;
+  padding: 8px 16px;
+  width: 100%;
+  max-width: 120px;
 }
 
 .task-form-container {

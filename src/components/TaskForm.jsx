@@ -13,7 +13,6 @@ function TaskForm({ addTask }) {
       title: title.trim(),
       notes: notes.trim(),
       status: "todo",
-      pinned: false,
     };
     addTask(newTask);
     setTitle("");

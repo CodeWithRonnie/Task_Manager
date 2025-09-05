@@ -9,10 +9,14 @@ function TaskCard({ task, moveTask, deleteTask, onDragStart, onDragEnd }) {
 
   const getStatusIcon = (status) => {
     switch (status) {
-      case "done":
+      case "completed":
         return "✓";
+      case "in-progress":
+        return "⚡";
+      case "postponed":
+        return "⏸️";
       default:
-        return "📌";
+        return "📋";
     }
   };
 
@@ -20,13 +24,11 @@ function TaskCard({ task, moveTask, deleteTask, onDragStart, onDragEnd }) {
     switch (status) {
       case "todo":
         return "task-card task-card-todo";
-      case "doing":
+      case "in-progress":
         return "task-card task-card-doing";
-      case "code-review":
+      case "postponed":
         return "task-card task-card-code-review";
-      case "testing":
-        return "task-card task-card-testing";
-      case "done":
+      case "completed":
         return "task-card task-card-done";
       default:
         return "task-card task-card-todo";
@@ -46,9 +48,6 @@ function TaskCard({ task, moveTask, deleteTask, onDragStart, onDragEnd }) {
           <span className="task-icon">{getStatusIcon(task.status)}</span>
           <h3 className="task-title">{task.title}</h3>
         </div>
-        {task.pinned && (
-          <span className="task-number">1</span>
-        )}
       </div>
 
       {/* Card Content */}
@@ -60,7 +59,7 @@ function TaskCard({ task, moveTask, deleteTask, onDragStart, onDragEnd }) {
       <div className="task-actions">
         <button
           onClick={() => deleteTask(task.id)}
-          className="btn btn-delete"
+          className="btn btn-delete btn-delete-large"
         >
           Delete
         </button>

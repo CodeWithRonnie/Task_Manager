@@ -11,16 +11,13 @@ function WorkProgress({ title, status, tasks, moveTask, deleteTask, limit, onDra
       case "todo":
         baseClass += "column-todo";
         break;
-      case "doing":
+      case "in-progress":
         baseClass += "column-doing";
         break;
-      case "code-review":
+      case "postponed":
         baseClass += "column-code-review";
         break;
-      case "testing":
-        baseClass += "column-testing";
-        break;
-      case "done":
+      case "completed":
         baseClass += "column-done";
         break;
       default:

@@ -6,16 +6,14 @@ function App() {
   const [tasks, setTasks] = useState(() => {
     const saved = localStorage.getItem("tasks");
     return saved ? JSON.parse(saved) : [
-      // Sample tasks to match the image
-      { id: 1, title: "To-Do", notes: "", status: "todo", pinned: true },
-      { id: 2, title: "Doing", notes: "", status: "doing", pinned: true },
-      { id: 3, title: "Example task", notes: "", status: "doing", pinned: false },
-      { id: 4, title: "Code Review", notes: "", status: "code-review", pinned: true },
-      { id: 5, title: "Example task", notes: "", status: "code-review", pinned: false },
-      { id: 6, title: "Testing", notes: "", status: "testing", pinned: true },
-      { id: 7, title: "Example task", notes: "", status: "testing", pinned: false },
-      { id: 8, title: "Done", notes: "", status: "done", pinned: true },
-      { id: 9, title: "[Completed task]", notes: "Jan 23, 2020", status: "done", pinned: false }
+      // Sample tasks for the new structure
+      { id: 1, title: "Design new feature", notes: "Create wireframes and mockups", status: "todo" },
+      { id: 2, title: "Implement user authentication", notes: "Add login and signup functionality", status: "in-progress" },
+      { id: 3, title: "Fix responsive layout", notes: "Make sure it works on mobile", status: "in-progress" },
+      { id: 4, title: "Update documentation", notes: "Need to wait for API changes", status: "postponed" },
+      { id: 5, title: "Code review for payment system", notes: "Review security implementation", status: "postponed" },
+      { id: 6, title: "Deploy to production", notes: "Final deployment after testing", status: "completed" },
+      { id: 7, title: "User testing feedback", notes: "Collected and analyzed", status: "completed" }
     ];
   });
 
@@ -67,10 +65,9 @@ function App() {
 
   const columns = [
     { title: "To Do", status: "todo", limit: null },
-    { title: "Doing", status: "doing", limit: null },
-    { title: "Code Review", status: "code-review", limit: 3 },
-    { title: "Testing", status: "testing", limit: null },
-    { title: "Done", status: "done", limit: null }
+    { title: "In Progress", status: "in-progress", limit: null },
+    { title: "Postponed", status: "postponed", limit: null },
+    { title: "Completed", status: "completed", limit: null }
   ];
 
   return (
