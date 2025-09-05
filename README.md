@@ -1,12 +1,63 @@
-# React + Vite
+# Task Tracker - Trello-inspired Kanban Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive task management application built with React, Vite, and Tailwind CSS. This project replicates the core functionality of Trello with a clean, intuitive interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **5-Column Kanban Board**: To Do, Doing, Code Review, Testing, and Done
+- **Drag & Drop**: Move tasks between columns by dragging and dropping
+- **Task Management**: Add, edit, and delete tasks with descriptions
+- **Column Limits**: Set limits on columns (e.g., Code Review has a 3-task limit)
+- **Visual Indicators**: Task counts, pin icons, and status-based color coding
+- **Responsive Design**: Works on desktop and mobile devices
+- **Local Storage**: Tasks are automatically saved to browser storage
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React 19** - Modern React with hooks
+- **Vite** - Fast build tool and development server
+- **Tailwind CSS** - Utility-first CSS framework
+- **HTML5 Drag & Drop API** - Native drag and drop functionality
+
+## Getting Started
+
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Open your browser** and navigate to `http://localhost:5173`
+
+## Usage
+
+- **Add Tasks**: Click on the "Add a task..." input field and enter your task details
+- **Move Tasks**: Drag and drop tasks between columns or use the "Move" button
+- **Delete Tasks**: Click the "Delete" button on any task card
+- **Column Limits**: The Code Review column has a 3-task limit with visual warnings
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── TaskCard.jsx      # Individual task card component
+│   ├── TaskForm.jsx      # Task creation form
+│   └── WorkProgress.jsx  # Column component
+├── App.jsx               # Main application component
+└── main.jsx             # Application entry point
+```
+
+## Features Matching Trello
+
+- ✅ Kanban board layout with multiple columns
+- ✅ Drag and drop functionality
+- ✅ Task cards with titles and descriptions
+- ✅ Column task counts
+- ✅ Visual status indicators
+- ✅ Responsive design
+- ✅ Clean, modern UI
