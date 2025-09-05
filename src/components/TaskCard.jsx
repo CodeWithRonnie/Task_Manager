@@ -11,12 +11,8 @@ function TaskCard({ task, moveTask, deleteTask, onDragStart, onDragEnd }) {
     switch (status) {
       case "completed":
         return "✓";
-      case "in-progress":
-        return "⚡";
-      case "postponed":
-        return "⏸️";
       default:
-        return "📋";
+        return "";
     }
   };
 
@@ -45,7 +41,9 @@ function TaskCard({ task, moveTask, deleteTask, onDragStart, onDragEnd }) {
       {/* Card Header */}
       <div className="task-header">
         <div className="task-icon-title">
-          <span className="task-icon">{getStatusIcon(task.status)}</span>
+          {getStatusIcon(task.status) && (
+            <span className="task-icon">{getStatusIcon(task.status)}</span>
+          )}
           <h3 className="task-title">{task.title}</h3>
         </div>
       </div>
